@@ -11,6 +11,12 @@
     "VDA Band 2, IATF 16949, IATF SIs, AIAG PPAP und ISO-Prüfnormen als Referenzstand dokumentiert.",
     "Vollständigkeits-, Rückverfolgbarkeits- und Plausibilitätsprüfungen aktiviert."
   ],
+  "sourceBaseline": {
+    "vdaBand2": "4664777c594eb24b",
+    "iatfSIs": "27-30|November 2025",
+    "iatfCsrs": "1193f33ae8858c66",
+    "aiagPpap": "b3842c91d45eb922"
+  },
   "references": [
     {
       "name": "VDA Band 2",

@@ -1,0 +1,61 @@
+{
+  "format": "empb-official-source-status",
+  "schemaVersion": 1,
+  "checkedAt": "2026-06-12T14:09:57.163092+00:00",
+  "sources": {
+    "vdaBand2": {
+      "ok": true,
+      "url": "https://webshop.vda.de/QMC/de/search?q=Sicherung+der+Qualit%C3%A4t+von+Lieferungen",
+      "signal": "4664777c594eb24b",
+      "display": "VDA Band 2 · Auflage öffentlich nicht eindeutig · 2020",
+      "details": [
+        "is A Preis: niedrig nach hoch Preis: hoch nach niedrig Erscheinungsdatum Anzeige per Seite 3 6 9 18 Band 02 - PPF_04/2020 Band 2, Sicherung der Qualität von Lieferungen, Produktionsprozess und Produktfreigabe (PPF) 6., überarbeitete Auflage, April 2020 €45,00 Preise exkl. MwSt. und Port"
+      ]
+    },
+    "iatfSIs": {
+      "ok": true,
+      "url": "https://www.iatfglobaloversight.org/iatf-169492016/iatf-169492016-sis/",
+      "signal": "27-30|November 2025",
+      "display": "IATF SIs Nr. 27–30 · November 2025",
+      "details": [
+        "#23-26 · November 2024",
+        "#27-30 · November 2025"
+      ]
+    },
+    "iatfCsrs": {
+      "ok": true,
+      "url": "https://www.iatfglobaloversight.org/oem-requirements/customer-specific-requirements/",
+      "signal": "1193f33ae8858c66",
+      "display": "IATF Customer Specific Requirements · 15 öffentliche Einträge erkannt",
+      "details": [
+        "BMW Group BMW Group Customer Specific Requirements for IATF 16949:2016",
+        "BYD Group The BYD Group Customer Specific Requirements are under development",
+        "Ford Motor Company Customer Specific Requirements for PPAP – Effective 6 February 2025",
+        "Ford Motor Company Ford Motor Company Customer Specific Requirements for IATF 16949:2016",
+        "Geely Holding Group Geely Group Customer Specific Requirements for IATF 16949:2016",
+        "General Motors General Motors Customer Specific Requirements for IATF 16949 – Effective 30 October 2025",
+        "IVECO Group IVECO Group Customer Specific Requirements for IATF 16949 – November 24, 2025",
+        "Jaguar Land Rover (JLR) Limited The Jaguar Land Rover (JLR) Limited Customer Specific Requirements are under development",
+        "Mercedes-Benz Group AG Mercedes-Benz AG Customer Specific Requirements for IATF 16949 – February 2022",
+        "Renault Group Renault Group – Customer Specific Requirements – April 2026",
+        "STELLANTIS CSR communique June 2025",
+        "Stellantis CSRs Summary October 2025",
+        "Stellantis STELLANTIS CSR for use with IATF16949 v1 June 2025",
+        "Volkswagen AG Volkswagen Group – Customer Specific Requirements – March 2022",
+        "Volvo Group Volvo Group – Customer Specific Requirements – February 28th 2025"
+      ]
+    },
+    "aiagPpap": {
+      "ok": true,
+      "url": "https://www.aiag.org/store/publications/details?ProductCode=PPAP-4",
+      "signal": "b3842c91d45eb922",
+      "display": "AIAG PPAP · Ausgabe öffentlich nicht eindeutig",
+      "details": [
+        "PPAP-4 | Production Part Approval Process --> MENU CLOSE Log in Membership Back to Main Menu Membership Overview Membership Application Sponsored Membership AIAG Member Connect International Back to Main Menu Internationa",
+        "ce AIAG Partnered Events AIAG Standalone Events Home Training & Resources Manuals Parent Page Share Production Part Approval Process Purchase Options Share Jump to section Overview Ensure your suppliers understand the processes required to produce parts with consistent quality during an actual production run at",
+        " production rates. PPAP is the industry standard for defining the production part approval process to ensure engineering design record and specification requirements are consistently met. Want a hard copy in another language? AIAG offers e-documents in multiple languages, but i",
+        "s should know - and developed with the required knowledge for third-party IATF ... Register Quality Production Part Approval Process (PPAP) Overview Register Quality Quality Core Tools - Connect the Dots e-Learning This basic level course will provide participants with a better understanding of how the automoti"
+      ]
+    }
+  }
+}
