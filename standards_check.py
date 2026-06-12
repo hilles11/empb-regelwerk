@@ -97,3 +97,48 @@ def inspect_iatf_csrs(source):
         "details": sorted(set(entries))[:30],
     }
 
+
+def inspect_ppap(source):
+    text = text_content(source)
+    matches = re.findall(r"(?i).{0,100}(?:PPAP-4|Production Part Approval Process).{0,180}", text)
+    editions = sorted(set(re.findall(r"(?i)\b\d+(?:st|nd|rd|th)\s+Edition\b", " ".join(matches))))
+    if not matches or "PPAP-4" not in text:
+        raise ValueError("AIAG PPAP-4 konnte auf der offiziellen Seite nicht eindeutig erkannt werden.")
+    return {
+        "signal": normalized_hash(matches),
+        "display": f"AIAG PPAP · {' / '.join(editions) or 'Ausgabe öffentlich nicht eindeutig'}",
+        "details": matches[:5],
+    }
+
+
+INSPECTORS = {
+    "vdaBand2": inspect_vda,
+    "iatfSIs": inspect_iatf_sis,
+    "iatfCsrs": inspect_iatf_csrs,
+    "aiagPpap": inspect_ppap,
+}
+
+
+def main():
+    results = {}
+    for key, url in SOURCES.items():
+        try:
+            results[key] = {"ok": True, "url": url, **INSPECTORS[key](fetch(url))}
+        except Exception as error:
+            results[key] = {"ok": False, "url": url, "error": str(error)}
+    payload = {
+        "format": "empb-official-source-status",
+        "schemaVersion": 1,
+        "checkedAt": datetime.now(timezone.utc).isoformat(),
+        "sources": results,
+    }
+    output = json.dumps(payload, ensure_ascii=False, indent=2)
+    if len(sys.argv) > 1:
+        with open(sys.argv[1], "w", encoding="utf-8") as handle:
+            handle.write(output + "\n")
+    else:
+        print(output)
+
+
+if __name__ == "__main__":
+    main()
