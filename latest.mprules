@@ -1,0 +1,73 @@
+{
+  "format": "mischungspruefung-rules",
+  "schemaVersion": 1,
+  "rulesVersion": "2026.06.12",
+  "title": "VDA/IATF/PPAP Basisregelwerk",
+  "publisher": "Mischungsprüfung",
+  "issuedAt": "2026-06-12",
+  "reviewedAt": "12.06.2026",
+  "summary": "Erstfassung des zentral über GitHub aktualisierbaren Regelwerks.",
+  "changes": [
+    "VDA Band 2, IATF 16949, IATF SIs, AIAG PPAP und ISO-Prüfnormen als Referenzstand dokumentiert.",
+    "Vollständigkeits-, Rückverfolgbarkeits- und Plausibilitätsprüfungen aktiviert."
+  ],
+  "references": [
+    {
+      "name": "VDA Band 2",
+      "edition": "6. überarbeitete Auflage 2020",
+      "url": "https://webshop.vda.de/QMC/de/band-2-sicherung-der-qualitaet-von-lieferungen"
+    },
+    {
+      "name": "IATF 16949",
+      "edition": "Ausgabe 2016",
+      "url": "https://www.iatfglobaloversight.org/iatf-169492016/about/"
+    },
+    {
+      "name": "IATF SIs",
+      "edition": "#27–30 · November 2025",
+      "url": "https://www.iatfglobaloversight.org/iatf-169492016/iatf-169492016-sis/"
+    },
+    {
+      "name": "IATF Kundenanforderungen",
+      "edition": "laufende offizielle Aktualisierungen",
+      "url": "https://www.iatfglobaloversight.org/oem-requirements/customer-specific-requirements/"
+    },
+    {
+      "name": "AIAG PPAP",
+      "edition": "4th Edition",
+      "url": "https://www.aiag.org/store/publications/details?ProductCode=PPAP-4"
+    },
+    {
+      "name": "ISO-Normen",
+      "edition": "Status je Prüfnorm prüfen",
+      "url": "https://www.iso.org/search.html"
+    }
+  ],
+  "rules": {
+    "requiredReportFields": [
+      { "key": "articleNumber", "label": "Artikelnummer" },
+      { "key": "compoundName", "label": "Mischungsbezeichnung" },
+      { "key": "lmNumber", "label": "LM-Nummer" },
+      { "key": "changeDate", "label": "Änderungsdatum" },
+      { "key": "productionDate", "label": "Herstelldatum" },
+      { "key": "batchCount", "label": "Chargenanzahl" },
+      { "key": "batchNumber", "label": "Chargennummern" },
+      { "key": "totalKg", "label": "Gesamtmenge" },
+      { "key": "reason", "label": "Grund der Berichterstellung" }
+    ],
+    "requiredPartyFields": [
+      { "key": "company", "label": "Firma" },
+      { "key": "street", "label": "Straße" },
+      { "key": "postalCity", "label": "Ort" },
+      { "key": "contact", "label": "Ansprechpartner" },
+      { "key": "phone", "label": "Telefon" },
+      { "key": "email", "label": "E-Mail" }
+    ],
+    "requireTechnicalSpecifications": true,
+    "requiredSpecificationFields": ["name", "standard", "unit", "values", "limits"],
+    "requireRemarkForOutliers": true,
+    "requireDocumentForSelectedEvidence": true,
+    "warnWhenNoAttachments": true,
+    "remindCustomerSpecificRequirements": true
+  }
+}
