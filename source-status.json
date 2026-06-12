@@ -1,7 +1,7 @@
 {
   "format": "empb-official-source-status",
   "schemaVersion": 1,
-  "checkedAt": "2026-06-12T14:22:09.985118+00:00",
+  "checkedAt": "2026-06-12T15:56:51.665948+00:00",
   "sources": {
     "vdaBand2": {
       "ok": true,
@@ -13,23 +13,26 @@
       ]
     },
     "iatfSIs": {
-      "ok": true,
+      "ok": false,
       "url": "https://www.iatfglobaloversight.org/iatf-169492016/iatf-169492016-sis/",
-      "signal": "e3b0c44298fc1c14",
-      "display": "IATF SIs · Stand nicht eindeutig erkannt",
-      "details": []
+      "error": "Quelle lieferte keine vollständig auswertbare Seite."
     },
     "iatfCsrs": {
-      "ok": true,
+      "ok": false,
       "url": "https://www.iatfglobaloversight.org/oem-requirements/customer-specific-requirements/",
-      "signal": "e3b0c44298fc1c14",
-      "display": "IATF Customer Specific Requirements · 0 öffentliche Einträge erkannt",
-      "details": []
+      "error": "Quelle lieferte keine vollständig auswertbare Seite."
     },
     "aiagPpap": {
-      "ok": false,
+      "ok": true,
       "url": "https://www.aiag.org/store/publications/details?ProductCode=PPAP-4",
-      "error": "<urlopen error timed out>"
+      "signal": "b3842c91d45eb922",
+      "display": "AIAG PPAP · Ausgabe öffentlich nicht eindeutig",
+      "details": [
+        "PPAP-4 | Production Part Approval Process --> MENU CLOSE Log in Membership Back to Main Menu Membership Overview Membership Application Sponsored Membership AIAG Member Connect International Back to Main Menu Internationa",
+        "ce AIAG Partnered Events AIAG Standalone Events Home Training & Resources Manuals Parent Page Share Production Part Approval Process Purchase Options Share Jump to section Overview Ensure your suppliers understand the processes required to produce parts with consistent quality during an actual production run at",
+        " production rates. PPAP is the industry standard for defining the production part approval process to ensure engineering design record and specification requirements are consistently met. Want a hard copy in another language? AIAG offers e-documents in multiple languages, but i",
+        "s should know - and developed with the required knowledge for third-party IATF ... Register Quality Production Part Approval Process (PPAP) Overview Register Quality Quality Core Tools - Connect the Dots e-Learning This basic level course will provide participants with a better understanding of how the automoti"
+      ]
     }
   }
 }
