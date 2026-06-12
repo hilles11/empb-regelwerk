@@ -2,7 +2,9 @@ name: Check official automotive sources
 
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    # GitHub schedules use UTC. The gate below selects 12:00 Europe/Berlin
+    # across summer and winter time.
+    - cron: "0 10,11 * * 3"
   workflow_dispatch:
 
 permissions:
@@ -12,13 +14,36 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Check German schedule
+        id: schedule
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" || "$(TZ=Europe/Berlin date +%H)" == "12" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.schedule.outputs.run == 'true'
       - uses: actions/setup-python@v5
+        if: steps.schedule.outputs.run == 'true'
         with:
           python-version: "3.12"
+      - name: Validate monitor script
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          python -m py_compile standards_check.py
+          grep -q 'if __name__ == "__main__"' standards_check.py
       - name: Check official sources
+        if: steps.schedule.outputs.run == 'true'
         run: python standards_check.py source-status.json
+      - name: Validate source status
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          test -s source-status.json
+          python -c "import json; data=json.load(open('source-status.json', encoding='utf-8')); assert data['format']=='empb-official-source-status'; assert data['checkedAt']; assert len(data['sources'])==4"
       - name: Publish current source status
+        if: steps.schedule.outputs.run == 'true'
         run: |
           git config user.name "empb-source-monitor"
           git config user.email "actions@users.noreply.github.com"
